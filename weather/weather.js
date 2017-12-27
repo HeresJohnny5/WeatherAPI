@@ -1,7 +1,8 @@
 const request = require('request');
+const data = require('../config');
 
-var getWeather = (results, callback) => {
-	var apiKey = '';
+var getWeather = (results, callback) => {	
+	var apiKey = data.apiKey;
 	var lat = results.lat;
 	var lng = results.lng;
 
