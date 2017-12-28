@@ -2,9 +2,17 @@
 
 <div class="ui main text container">
 	<div class="ui huge header">Weather App</div>
-	<p><%= address %></p>
-	<p><%= temp %></p>
-	<p><%= appTemp %></p>
+	<div id="results-container" class="ui top attached segment">
+		<div class="field">
+			<h4 class="ui dividing header">Address: <%= address %></h4>
+			<p><%= weatherResults.icon %></p>
+			<p>Summary: <%= weatherResults.summary %></p>
+			<p>Temperature: <%= weatherResults.temperature %></p>
+			<p>Feels Like:<%= weatherResults.apparentTemperature %></p>
+		</div>		
+	</div>
+
+	<button id="again" class="ui primary basic button"><a href="/">Try Again</a></button>
 </div>
 
 <% include ./partials/footer %>

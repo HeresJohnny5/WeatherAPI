@@ -30,14 +30,11 @@ app.post('/result', function(req, res) {
 		} else {
 			var address = results.address;
 			
-			weather.getWeather(results, (errorMessage, weatherResults) => {				
-				var temp = weatherResults.temperature;
-				var appTemp = weatherResults.apparentTemperature;
-				
+			weather.getWeather(results, (errorMessage, weatherResults) => {					
 				if (errorMessage) {
 					console.log(errorMessage);
 				} else {
-					res.render('results', { address: address, temp: temp, appTemp: appTemp });
+					res.render('results', { address: address, weatherResults: weatherResults });
 				}
 			});
 		}

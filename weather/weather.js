@@ -12,6 +12,8 @@ var getWeather = (results, callback) => {
 		}, (error, response, body) => {
 			if (!error && response.statusCode === 200) {
 				callback(undefined, {
+					summary: body.currently.summary,
+					icon: body.currently.icon,
 					temperature: body.currently.temperature,
 					apparentTemperature: body.currently.apparentTemperature
 				});
