@@ -26,13 +26,13 @@ app.post('/result', function(req, res) {
 	
 	geocode.geocodeAddress(address, (errorMessage, results) => {
 		if (errorMessage) {
-			console.log(errorMessage);
+			res.render('404', { errorMessage: errorMessage });
 		} else {
 			var address = results.address;
 			
 			weather.getWeather(results, (errorMessage, weatherResults) => {					
 				if (errorMessage) {
-					console.log(errorMessage);
+					res.render('404', { errorMessage: errorMessage });
 				} else {
 					res.render('results', { address: address, weatherResults: weatherResults });
 				}

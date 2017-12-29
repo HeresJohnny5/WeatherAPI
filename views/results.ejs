@@ -2,9 +2,30 @@
 
 <div class="ui main text container">
 	<div class="ui huge header">Weather App</div>
-	<div id="results-container" class="ui top attached segment">
+	<div class="ui top attached segment">
 		<div class="field">
 			<h4 class="ui dividing header">Address: <%= address %></h4>
+			
+			<% if (weatherResults.icon === 'clear-day') { %>
+				<div><i class="ion-ios-sunny-outline"></i></div>
+			<% } else if (weatherResults.icon === 'clear-night') { %>
+				<div><i class="ion-ios-moon-outline"></i></div>
+			<% } else if (weatherResults.icon === 'rain') { %>
+				<div><i class="ion-ios-rainy-outline"></i></div>
+			<% } else if (weatherResults.icon === 'snow' || weatherResults.icon === 'sleet') { %>
+				<div><i class="ion-ios-snowy"></i></div>
+			<% } else if (weatherResults.icon === 'cloudy') { %>
+				<div><i class="ion-ios-cloud-outline"></i></div>
+			<% } else if (weatherResults.icon === 'partly-cloudy-day') { %>
+				<div><i class="ion-ios-partlysunny-outline"></i></div>
+			<% } else if (weatherResults.icon === 'partly-cloudy-night') { %>
+				<div><i class="ion-ios-cloudy-night-outline"></i></div>
+			<% } else if (weatherResults.icon === 'thunderstorm') { %>
+				<div><i class="ion-ios-thunderstorm-outline"></i></div>
+			<% } else { %>
+			
+			<% } %>
+								
 			<p><%= weatherResults.icon %></p>
 			<p>Summary: <%= weatherResults.summary %></p>
 			<p>Temperature: <%= weatherResults.temperature %></p>
@@ -12,7 +33,7 @@
 		</div>		
 	</div>
 
-	<button id="again" class="ui primary basic button"><a href="/">Try Again</a></button>
+	<button class="ui primary basic button"><a href="/">Try Again</a></button>
 </div>
 
 <% include ./partials/footer %>
