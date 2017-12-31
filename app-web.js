@@ -7,6 +7,7 @@ const axios = require('axios');
 const geocode = require('./geocode/geocode');
 const weather = require('./weather/weather');
 const data = require('./config'); 
+const dateFormat = require('./weather/dateFormat');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -34,7 +35,7 @@ app.post('/result', function(req, res) {
 				if (errorMessage) {
 					res.render('404', { errorMessage: errorMessage });
 				} else {
-					res.render('results', { address: address, weatherResults: weatherResults });
+					res.render('results', { address: address, weatherResults: weatherResults, dateFormat: dateFormat });
 				}
 			});
 		}

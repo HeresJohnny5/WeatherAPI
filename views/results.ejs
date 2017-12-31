@@ -25,11 +25,15 @@
 			<% } else { %>
 			
 			<% } %>
-								
+			
+			<p><%= dateFormat.today %></p>
 			<p><%= weatherResults.icon %></p>
-			<p>Summary: <%= weatherResults.summary %></p>
-			<p>Temperature: <%= weatherResults.temperature %></p>
-			<p>Feels Like:<%= weatherResults.apparentTemperature %></p>
+			<p>Temperature values are in Degrees Celsius.</p>
+			<p>Temperature: <%= weatherResults.temp %></p>
+			<p>Feels Like: <%= weatherResults.apparentTemp %></p>
+			<p>Temperature High: <%= weatherResults.tempHigh %></p>
+			<p>Temperature Low: <%= weatherResults.tempLow %></p>
+			<p><%= weatherResults.summary %></p>
 		</div>		
 	</div>
 

@@ -3,3 +3,5 @@
 i.icon { font-size: 2em; }
 
 .field i { font-size: 5em; }
+
+button.ui.primary.basic.button { margin-top: 1em; }
