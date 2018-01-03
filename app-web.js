@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require('body-parser')
 const axios = require('axios');
 
+const port = process.env.PORT || 3000;
+
 const geocode = require('./geocode/geocode');
 const weather = require('./weather/weather');
 const data = require('./config'); 
@@ -43,4 +45,4 @@ app.post('/result', function(req, res) {
 		
 });
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+app.listen(port, () => console.log(`Server has started on port ${port}.`));
