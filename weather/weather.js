@@ -11,7 +11,7 @@ var getWeather = (results, callback) => {
 	console.log(lng);
 
 	request({
-		url: `https://api.darksky.net/forecast/${data.apiKey}/${lat},${lng}`,
+		url: `https://api.darksky.net/forecast/${apiKey}/${lat},${lng}`,
 		json: true
 		}, (error, response, body) => {
 			if (!error && response.statusCode === 200) {
