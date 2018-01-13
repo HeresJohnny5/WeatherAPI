@@ -1,9 +1,7 @@
 const request = require('request');
-//const data = require('../config');
-const apiKey = process.env.apiKey;
 
 var getWeather = (results, callback) => {	
-	var apiKey = data.apiKey;
+	var apiKey = process.env.apiKey;
 	var lat = results.lat;
 	var lng = results.lng;
 	

@@ -8,7 +8,6 @@ const port = process.env.PORT || 3000;
 
 const geocode = require('./geocode/geocode');
 const weather = require('./weather/weather');
-const data = require('./config'); 
 const dateFormat = require('./weather/dateFormat');
 
 app.set('view engine', 'ejs');
